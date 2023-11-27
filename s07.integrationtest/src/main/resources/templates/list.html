@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>s07 integration test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+ 	<h1>Customers</h1>
+</body>
+	<div><a th:href="@{/customer/new}">New</a></div>
+<table>
+	<tr>
+		<thead>
+			<th>Id</th>
+			<th>Name</th>
+		</thead>
+	</tr>
+	<tr th:each="customer : ${customers}">
+		<td th:text="${customer.id}">0</td>
+		<td th:text="${customer.name}">Default name</td>
+	</tr>
+</table>
+</html>

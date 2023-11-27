@@ -1,0 +1,10 @@
+insert into vehicle  (id, name, dis) values (1,'Generic Vehicle','VEH');
+insert into vehicle  (id, name, gears, dis) values (2,'Mountain Bike',21, 'BYC');
+insert into vehicle  (id, name, gears, dis) values (3,'Simple Bike', 1, 'BYC');
+insert into vehicle  (id, name, driving_range, dis) values (4,'Generic motor vehicle', 100, 'MOT');
+insert into vehicle  (id, name, driving_range, dis) values (5,'Electric Skate', 50, 'MOT');
+insert into vehicle  (id, name, driving_range, dis) values (6,'Generic motor vehicle', 100, 'MOT');
+insert into vehicle  (id, name, driving_range, license, fuel, dis) values (7,'Opel Corsa', 50, '0042GOD', 'Diesel','CAR');
+insert into vehicle  (id, name, driving_range, license, fuel, dis) values (8,'Seat 124', 50, '0666EVL', 'Gasoline','CAR');
+insert into vehicle  (id, name, driving_range, engines, dis) values (9,'Boeing 747', 500, 4,'AIR');
+insert into vehicle  (id, name, driving_range, engines, dis) values (10,'DC-10', 400, 2,'AIR');

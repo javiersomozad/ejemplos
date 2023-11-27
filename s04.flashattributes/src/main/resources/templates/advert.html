@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.flashattributes</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<h1>Form</h1>
+	<h2 th:text="${message}"></h2>
+	<p th:text="${details}"></p>
+  <form action="#" th:action="@{/advert}" th:object="${advert}" method="post">
+  	<div><label for="title">Title</label></div>
+  	<div> <input type="text" th:field="*{title}" /></div>
+  	<div><label for="text">Text</label></div>
+  	<div><textarea th:field="*{text}" /></div>
+  	 <div><label for="contact">Contact</label></div>
+  	<div><input type="text" th:field="*{contact}" /></div>
+  <p><input type="submit" value="Submit" /> </p>
+  </form>
+  <div>
+  	<a href="/">Back to index</a>
+	</div>
+</body>
+</html>

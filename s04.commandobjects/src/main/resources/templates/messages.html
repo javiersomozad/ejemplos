@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Guestbook - s04.commandobjects</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+  <div class="container">
+ 	<h1>Guestbook</h1>
+ 	<form action="#" th:action="@{/messages}" th:object="${messageCommand}" method="post">
+    	<div><label for="title">Title</label></div>
+    	<div><input type="text" th:field="*{title}" /></div>
+    	
+    	<div><label for="content">Content</label></div>
+    	<div><textarea th:field="*{content}" /></div>
+        
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+	<div th:each="message : ${messages}">
+		<div>
+	  		<h4 th:text="${message.title}">Default title</h4>
+			<div  th:text="${message.content}">			
+				Default message
+			</div>
+		<div>
+	<div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.i18n</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<header>
+		<h1 th:text="#{invoices}">Invoice creation</h1>
+		<h2 th:text="#{invoices.success}">Ok</h2>
+	</header>
+	<main>
+	<div th:text="'Id ' + ${invoice.id}" />
+	<div th:text="#{invoice.customer} + ': ' + ${invoice.customer}" />
+	<div th:text="#{invoice.total} + ': ' + ${invoice.total}" />
+	<div th:text="#{invoice.date}+ ':' + ${invoice.date}" />
+	<a href="/invoice" th:text="#{sendagain}">Send again</a> 
+	</main>
+</body>
+</html>

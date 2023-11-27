@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- This sets how theme deiniftion looks like -->
+ <bean id="themeSource" class="org.springframework.ui.context.support.ResourceBundleThemeSource">
+        <property name="basenamePrefix" value="themes_" />
+</bean>
+ 
+<!-- This enables to change theme on the fly by setting theme parameter in any GET request  -->
+<bean id="themeChangeInterceptor" class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+    <property name="paramName" value="theme" />
+</bean>
+
+<!-- This sets default theme -->
+<bean id="themeResolver" class="org.springframework.web.servlet.theme.CookieThemeResolver">
+    <property name="defaultThemeName" value="default" />
+</bean>
+ 
+ 
+
+</beans>

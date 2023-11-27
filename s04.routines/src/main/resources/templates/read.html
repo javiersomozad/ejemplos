@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.routines</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<header>
+		<h1>My routines</h1>
+		<a th:href="@{/routines/create}">New Routine</a>
+	</header>
+	<main>
+	<h2>Routines page</h2>
+		<table>
+	<tr>
+		<thead>
+			<th>Id</th>
+			<th>Task</th>
+			<th>Importance</th>
+			<th></th>
+		</thead>
+	</tr>
+	<tr th:each="routine : ${routines}">
+	<td th:text="${routine.id}">0</td>
+	<td th:text="${routine.task}">Default task</td>
+	<td th:text="${routine.importance}">Default importance</td>
+	<td><a th:href="@{/routines/{id}(id=${routine.id})}">Detail</a></td>
+	<td><a th:href="@{/routines/update/{id}(id=${routine.id})}">Update</a></td>
+	<td><a th:href="@{/routines/delete/{id}(id=${routine.id})}">Delete</a></td>
+
+	</tr>
+</table>
+	</main>
+</body>
+</html>

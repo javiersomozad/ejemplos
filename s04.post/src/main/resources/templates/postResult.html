@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.post</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<header>
+		<h1>Form submission</h1>
+	</header>
+	<main>
+	<div th:text="'title: ' + ${message.title}" />
+	<div th:text="'content: ' + ${message.content}" />
+	<div th:text="'date: ' + ${message.date}" />
+	<a href="/message">Send again</a> 
+	</main>
+</body>
+</html>

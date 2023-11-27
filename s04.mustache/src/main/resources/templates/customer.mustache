@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.mustache : simple</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<header>
+		<h1>Mustache Customer{{! This is a comment}}.</h1>
+	</header>
+	<main>
+	<div>
+ 		<span>Hello {{customer.name}}</span>,
+ 		<span>{{customer.type.type}}</span>.
+ 	</div>
+	<ul>
+	{{#customer}}
+<li><b>Name:</b> {{name}}.</li>
+<li><b>Email:</b> {{email}}.</li>
+<li><b>Birth:</b> {{birth}}.</li>
+<li><b>Type:</b>  {{type.type}}.</li>
+	{{/customer}}
+</ul>
+
+   {{^customer.accounts}}
+   <div>No accounts</div>
+   {{/customer.accounts}}
+   
+<div class="accounts">
+
+ <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Bank</th>
+        <th>Nº</th>
+        <th>Active</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#customer.accounts}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{bank}}</td>
+      <td>{{number}}</td>
+      <td>{{active}}</td>
+      <td>{{balance}}</td>
+  </tr>
+  {{/customer.accounts}}
+   </tbody>
+   </table>
+
+   </div>
+	</main>
+	<footer>
+		<a href="/">Home</a> 
+	</footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+[
+	{
+		"_class": "es.anaya.spring.reactive.s06.reactiverest.domain.Artist",
+		"name": "Prince",
+		"country": "US"
+	},
+	{
+		"_class": "es.anaya.spring.reactive.s06.reactiverest.domain.Artist",
+		"name": "Alaska",
+		"country": "ES"
+	}
+]

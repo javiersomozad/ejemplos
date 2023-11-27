@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="order1" class="es.anaya.spring.basic.s02.aop.pointcuts.Order">
+		<constructor-arg name="name" value="Cachopo con cabrales" />
+		<constructor-arg name="price" value="12.42d" />
+	</bean>
+
+	<bean id="order2" class="es.anaya.spring.basic.s02.aop.pointcuts.Order">
+		<constructor-arg name="name" value="Chuletón" />
+		<constructor-arg name="price" value="24.15d" />
+	</bean>
+
+	<bean id="restaurant" class="es.anaya.spring.basic.s02.aop.pointcuts.Restaurant">
+		<constructor-arg name="name" value="Spring Restaurant" />
+		<constructor-arg name="address" value="av/ Jovellanos 34" />
+		<property name="orders">
+			<list>
+				<ref bean="order1" />
+				<ref bean="order2" />
+			</list>
+		</property>
+	</bean>
+
+	
+	<bean id="orderMonitor" class="es.anaya.spring.basic.s02.aop.pointcuts.OrderMonitor" />
+
+	<aop:config>
+		<aop:aspect ref="orderMonitor">
+			<aop:before 
+				pointcut="execution(public * *(..))" 
+				method="beforeAnyMethod" />
+			<aop:before 
+				pointcut="execution(public * *(..))" 
+				method="afterAnyMethod" />
+			<aop:before 
+				pointcut="execution(public * es.anaya.spring.basic.s02.aop.pointcuts.Restaurant.addOrder(..))" 
+				method="beforeAMethod" />
+			<aop:after-returning  
+				pointcut="execution(* es.anaya.spring.basic.s02.aop.pointcuts.Restaurant.addOrder(..))" 
+				returning="orderNumber"
+				method="afterAMethod" />
+			<aop:after-throwing 
+				pointcut="execution(* es.anaya.spring.basic.s02.aop.pointcuts.Restaurant.addOrder(..))" 
+				throwing = "error"
+				method="afterThrowing" />
+			<aop:around
+				pointcut="execution(* es.anaya.spring.basic.s02.aop.pointcuts.Restaurant.addOrder(..))" 
+				method="aroundMethod" />
+		</aop:aspect>
+	</aop:config>
+
+</beans>

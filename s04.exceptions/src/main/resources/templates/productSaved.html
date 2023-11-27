@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Products - s04.exceptions</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+  <div class="container">
+ 	<h1>Products</h1>
+ 	<p>Ok, your product has been saved</p>
+	<div>
+  	<div>
+	 <h4 th:text="${product.name}">Default name</h4>
+	 <h6  th:text="${product.id}">0</h6>
+	  <div th:text="${product.price}">Default price</div>
+	</div>
+	<div>
+	<a href=/products>Back</a>
+	</div>
+</body>
+</html>

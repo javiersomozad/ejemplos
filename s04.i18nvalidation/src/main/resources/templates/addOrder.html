@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Spring/S04.18nvalidation : index</title>
+	<meta charset="UTF-8">
+  <link rel="stylesheet" 
+     src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" 
+     integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" 
+     crossorigin="anonymous"
+	   th:href="@{/webjars/bootstrap/4.0.0-beta.2/css/bootstrap.min.css}">
+</head>
+<body>
+  <div class="container">
+ 	<h1>Orders</h1>
+   <div><a href="?lang=en">EN</a> | <a href="?lang=es">ES</a></div>
+ 	<form action="#" th:action="@{/orders}" th:object="${orderCommand}" method="post">
+ 	  <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+        <p th:text="#{orderCommand.errorsBelow}">Default errors message</p>
+  </div>
+  	<div>
+    <label for="description">Description</label>
+    <span class="help-block" th:if="${#fields.hasErrors('description')}">
+      <ul>
+         <li th:each="err : ${#fields.errors('description')}" th:text="${err}"/>
+      </ul>
+  	</span>
+  	</div>
+  	<div>
+  	 <input type="text" th:field="*{description}" />
+  	</div>
+  	<div>
+    <label for="date">Date</label>
+    <span class="help-block" th:if="${#fields.hasErrors('date')}">
+        <ul>
+         <li th:each="err : ${#fields.errors('date')}" th:text="${err}"/>
+        </ul>
+  	</span>
+  	</div>
+  	<div>
+  	 <input type="text" th:field="*{date}" />
+  	</div>
+  	<div>
+    <label for="total">Total</label>
+     <span class="help-block" th:if="${#fields.hasErrors('total')}">
+        <ul>
+         <li th:each="err : ${#fields.errors('total')}" th:text="${err}"/>
+        </ul>
+  	</span>
+  	</div>
+  	<div>
+  	 <input type="text" th:field="*{total}" />
+  	</div>
+    <p><input type="submit" value="Submit" /></p>
+  </form>
+	<div>
+  <a href="/orders">Back</a>
+	<div>
+	
+	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Books database - mockito</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+ 	<h1>Books</h1>
+</body>
+<table>
+	<tr>
+		<thead>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th></th>
+		</thead>
+	</tr>
+	<tr th:each="book : ${books}">
+	<td th:text="${book.id}">0</td>
+	<td th:text="${book.title}">Default title</td>
+	<td th:text="${book.description}">Default description</td>
+	</tr>
+</table>
+</html>

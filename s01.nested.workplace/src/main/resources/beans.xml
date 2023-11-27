@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans 
+  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="workplace" class="es.anaya.spring.basic.s01.nested.workplace.Workplace">
+  <property name="name" value="Developer place" />
+  <property name="building">
+  
+    <bean class="es.anaya.spring.basic.s01.nested.workplace.Building">
+      <property name="name" value="Dennis Ritchie Memorial" />
+      <property name="address" value="Linus Torvalds avenue" />
+      <property name="city" value="San Francisco" />
+    </bean>
+  
+  </property>
+  <property name="department">
+    <bean class="es.anaya.spring.basic.s01.nested.workplace.Department">
+      <constructor-arg name="name" value="Information Technology" />
+      <constructor-arg>
+      
+        <bean class="es.anaya.spring.basic.s01.nested.workplace.Employee">
+          <property name="name" value="Steve Jobs" />
+          <property name="laptop">
+          
+            <bean id="laptop2" class="es.anaya.spring.basic.s01.nested.workplace.Laptop">
+              <constructor-arg index="0" value="Toshiba Mitnick" />
+              <constructor-arg index="1" value="Ubuntu 16" />
+            </bean>
+          
+          </property>
+        </bean>
+      
+      </constructor-arg>
+    </bean>
+  </property>
+  <property name="employee">
+    <bean class="es.anaya.spring.basic.s01.nested.workplace.Employee">
+      <constructor-arg name="name" value="Brian Kernigan" />
+        <constructor-arg>
+        
+          <bean class="es.anaya.spring.basic.s01.nested.workplace.Laptop">
+            <constructor-arg name="model"
+              value="Dell Spontaneous Combustion" />
+            <constructor-arg name="os" value="Windows 95" />
+          </bean>
+      
+        </constructor-arg>
+      </bean>
+    </property>
+  </bean>
+  
+</beans>

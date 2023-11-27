@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <title>Web and JPA sample</title>
+  <meta charset="UTF-8" />
+</head>
+<body>
+   <h1>See the stars with Spring JPA</h1>
+
+  <div><a th:href="@{/stars/create}">New</a></div>
+<table>
+  <tr>
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Distance</th>
+      <th></th>
+    </thead>
+  </tr>
+  <tr th:each="star : ${stars}">
+	  <td th:text="${star.id}">0</td>
+	  <td th:text="${star.name}">Default name</td>
+	  <td th:text="${star.type}">Default type</td>
+	  <td th:text="${star.distance}">Default distance</td>
+	  <td><a th:href="@{/stars/{id}(id=${star.id})}">Detail</a></td>
+	  <td><a th:href="@{/stars/update/{id}(id=${star.id})}">Update</a></td>
+	  <td><a th:href="@{/stars/delete/{id}(id=${star.id})}">Delete</a></td>
+  </tr>
+</table>
+</body>
+</html>

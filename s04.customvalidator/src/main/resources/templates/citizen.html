@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.customvalidator</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+  <h1>Form</h1>
+  <form action="#" th:action="@{/citizen}" th:object="${citizen}"
+    method="post">
+    <div>
+      <label for="id">Id</label>
+    </div>
+    <div>
+      <input type="text" th:field="*{id}" />
+      <div th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Citizen
+        Id Error</div>
+    </div>
+    <div>
+      <label for="account">Account</label>
+    </div>
+    <div>
+      <textarea th:field="*{account}" />
+      <div th:if="${#fields.hasErrors('account')}" th:errors="*{account}">Citizen
+        account Error</div>
+    </div>
+    <div>
+      <label for="postCode">PostCode</label>
+    </div>
+    <div>
+      <input type="postCode" th:field="*{postCode}" />
+      <div th:if="${#fields.hasErrors('postCode')}" th:errors="*{postCode}">Citizen
+        postCode Error</div>
+    </div>
+    <p>
+      <input type="submit" value="Submit" />
+    </p>
+  </form>
+</body>
+</html>

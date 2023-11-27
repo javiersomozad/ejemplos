@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.defaultconventions</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+  <header>
+    <h1>Products</h1>
+  </header>
+  <main>
+  <form method="post">
+    <div><label>Name</label></div>
+    <div><input type="text" name="name" /></div>
+    
+    <div><label>Description</label></div>
+    <div><textarea name="description"></textarea></div>
+    
+    <div><label>Price</label></div>
+    <div><input type="" name="price" /></div>
+    
+    <div><input type="submit" value="Submit" /></div>
+  </form>
+
+  <table>
+    <tr>
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+    </thead>
+    </tr>
+    <tr th:each="product : ${productList}">
+      <td th:text="${product.id}">0</td>
+      <td th:text="${product.name}">Default name</td>
+      <td th:text="${product.description}">Default description</td>
+      <td th:text="${product.price}">Default price</td>
+    </tr>
+  </table>
+  </main>
+</body>
+</html>

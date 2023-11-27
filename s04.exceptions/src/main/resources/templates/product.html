@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Products - s04.exceptions</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<div class="container">
+		<h1>Product</h1>
+		<h2 th:text="${product.name}">Default name</h2>
+			<span th:text="${product.id}">Id</span> 
+			<span th:text="${product.price}">Default
+				product</span> 
+			<div><a href="/products">Back</a></div>
+	</div>
+</body>
+</html>

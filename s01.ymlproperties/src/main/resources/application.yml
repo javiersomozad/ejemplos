@@ -1,0 +1,36 @@
+# This is just a comment
+other:
+  config:
+    name: Sample App Config
+    description: This is a very long description
+    showDate: true
+sample:
+  user:
+    login: falken
+    password: josua  # classic password ;)
+   
+samples:
+  booleans:   
+    truth: true
+    also_truth: yes     # Yes, TES, True, true
+    and_also_truthy: NO # No, NO, False, false
+  lists:
+    wizards:
+      - Gandalf
+      - Merlin
+      - Dumbledore
+      - Rincewind
+    weapons: ['Foehammer', 'Goblin cleaver', 'Needle', 'Narsil']
+  strings:
+    quotes: "This is a string with 'quotes'"
+    multiline: |
+      This is a very long
+      string dividen in
+      multiple lines
+    multiline_no_breaks: >
+      This is a very long
+      string in just one line
+      we write like this
+      for convenience  
+  objects:
+    customer: {id: 3, name: 'Peter Parker', superhero: true}

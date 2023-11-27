@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.thymeleaf : simple</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<header>
+		<h1>Thymeleaf Customer</h1>
+	</header>
+	<main>
+	<div>
+ 		<span th:text="'Hello ' + ${customer['name']}">Name</span>,
+ 		<span th:text="${customer['type']['type']}">Type</span>.
+ 	</div>
+	<ul th:object="${customer}">
+<li><b>Name:</b> <span th:text="*{name}">John Doe</span>.</li>
+<li><b>Email:</b> <span th:text="*{email}">j@doe</span>.</li>
+<li><b>Birth:</b> 
+<span th:text="*{#calendars.format(birth,'YYYY MM dd')}">Birth date</span>.</li>
+<li><b>Type:</b> <span th:text="*{type.type}">Type</span>.</li>
+
+</ul>
+<div th:switch="${customer.type.type}">
+  <p th:case="'VIP'">Customer is VIP</p>
+  <p th:case="*">Normal Customer</p>
+</div>
+   <div th:if="${#lists.isEmpty(customer.accounts)}">No accounts</div>
+<div class="accounts" th:unless="${#lists.isEmpty(customer.accounts)}">
+ <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Bank</th>
+        <th>Nº</th>
+        <th>Active</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr th:each="account,iteration : ${customer.accounts}" th:class="${iteration.odd}? 'odd'">
+      <td th:text="${account.id}">Id</td>
+      <td th:text="${account.bank}">Spring bank</td>
+      <td th:text="${account.number}">Number</td>
+      <td th:text="${account.active}? 'ACTIVE' : 'INACTIVE'">yes</td>
+      <td th:text="${account.balance}">Balance</td>
+  </tr>
+   </tbody>
+   </table>
+
+   </div>
+	</main>
+	<footer>
+		<a href="/">Home</a> 
+	</footer>
+</body>
+</html>

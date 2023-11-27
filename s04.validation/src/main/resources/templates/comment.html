@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.validation</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<h1>Form</h1>
+  <form action="#" th:action="@{/comment}" th:object="${comment}" method="post">
+  	<div>
+  		<label for="user">User</label>
+  	</div>
+  	<div>
+ 		<input type="text" th:field="*{user}" />
+ 		<div th:if="${#fields.hasErrors('user')}" th:errors="*{user}">Comment user Error</div>
+  	</div>
+  	<div>
+  		<label for="text">Text</label>
+  	</div>
+  	<div>
+ 		<textarea th:field="*{text}" />
+ 		<div th:if="${#fields.hasErrors('text')}" th:errors="*{text}">Comment text Error</div>
+  	</div>
+  	 <div>
+  		<label for="mark">Mark 0-10</label>
+  	</div>
+  	<div>
+ 		<input type="text" th:field="*{mark}" />
+ 		<div th:if="${#fields.hasErrors('mark')}" th:errors="*{mark}">Comment mark Error</div>
+  	</div>
+    <p><input type="submit" value="Submit" /></p>
+  </form>
+</body>
+</html>

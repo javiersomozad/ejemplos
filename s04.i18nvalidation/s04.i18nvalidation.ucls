@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="false" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="es.anaya.spring.testing.s04.i18nvalidation.converters.OrderCommandToOrder" 
+    project="s04.i18nvalidation" 
+    file="/s04.i18nvalidation/src/main/java/es/anaya/spring/testing/s04/i18nvalidation/converters/OrderCommandToOrder.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="73" width="172" x="434" y="278"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="es.anaya.spring.testing.s04.i18nvalidation.service.OrderServiceImpl" 
+    project="s04.i18nvalidation" 
+    file="/s04.i18nvalidation/src/main/java/es/anaya/spring/testing/s04/i18nvalidation/service/OrderServiceImpl.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="440" x="628" y="137"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="es.anaya.spring.testing.s04.i18nvalidation.commands.OrderCommand" 
+    project="s04.i18nvalidation" 
+    file="/s04.i18nvalidation/src/main/java/es/anaya/spring/testing/s04/i18nvalidation/commands/OrderCommand.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="103" x="1117" y="391"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="es.anaya.spring.testing.s04.i18nvalidation.controllers.OrderController" 
+    project="s04.i18nvalidation" 
+    file="/s04.i18nvalidation/src/main/java/es/anaya/spring/testing/s04/i18nvalidation/controllers/OrderController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="87" width="288" x="1108" y="137"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="es.anaya.spring.testing.s04.i18nvalidation.config.I18nConfiguration" 
+    project="s04.i18nvalidation" 
+    file="/s04.i18nvalidation/src/main/java/es/anaya/spring/testing/s04/i18nvalidation/config/I18nConfiguration.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="87" width="269" x="175" y="137"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="es.anaya.spring.testing.s04.i18nvalidation.Application" 
+    project="s04.i18nvalidation" 
+    file="/s04.i18nvalidation/src/main/java/es/anaya/spring/testing/s04/i18nvalidation/Application.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="59" width="104" x="484" y="137"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="7" language="java" name="es.anaya.spring.testing.s04.i18nvalidation.repositories.OrderRepository" 
+    project="s04.i18nvalidation" 
+    file="/s04.i18nvalidation/src/main/java/es/anaya/spring/testing/s04/i18nvalidation/repositories/OrderRepository.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="45" width="198" x="175" y="278"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="8" language="java" name="es.anaya.spring.testing.s04.i18nvalidation.service.OrderService" 
+    project="s04.i18nvalidation" 
+    file="/s04.i18nvalidation/src/main/java/es/anaya/spring/testing/s04/i18nvalidation/service/OrderService.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="73" width="238" x="858" y="278"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="9" language="java" name="es.anaya.spring.testing.s04.i18nvalidation.domain.Order" 
+    project="s04.i18nvalidation" 
+    file="/s04.i18nvalidation/src/main/java/es/anaya/spring/testing/s04/i18nvalidation/domain/Order.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="171" x="434" y="391"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="es.anaya.spring.testing.s04.i18nvalidation.converters.OrderToOrderCommand" 
+    project="s04.i18nvalidation" 
+    file="/s04.i18nvalidation/src/main/java/es/anaya/spring/testing/s04/i18nvalidation/converters/OrderToOrderCommand.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="73" width="172" x="646" y="278"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="11">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="12">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="13">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="14" name="orderRepository"/>      
+      <multiplicity id="15" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="16">    
+    <bendpoint x="1147" y="278"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="17">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="18">    
+    <bendpoint x="403" y="278"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="19">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="20" name="orderCommandToOrder"/>      
+      <multiplicity id="21" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="22">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="23" name="orderToOrderCommand"/>      
+      <multiplicity id="24" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="25">    
+    <bendpoint x="1126" y="278"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="26">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <realization id="27">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <dependency id="28">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="29">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="30" name="orderService"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="32">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="33">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+    sort-features="false" accessors="false" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

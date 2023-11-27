@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.jpacrud</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+<h1>Form</h1>
+   <form action="#" th:action="@{/stars/update}" th:object="${star}" method="post">
+   <input type="hidden" th:field="*{id}" />
+    <div>
+    <label for="name">Name</label>
+    </div>
+    <div>
+   <input type="text" th:field="*{name}" />
+    <div>
+    <label for="type">Type</label>
+    </div>
+    <div>
+   <select th:field="*{type}" >
+   <option value="1">WHITEDWARF</option>
+    <option value="2">WHITE</option>
+     <option value="3">RED</option>
+     <option value="4">GIANTRED</option>
+     <option value="5">NEUTRINO</option>  
+     <option value="6">BLACKHOLE</option>  
+    </select>
+    </div>
+        <div>
+    <label for="distance">Distance</label>
+    </div>
+    <div>
+   <input type="text" th:field="*{distance}" />
+    </div>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+</body>
+</html>

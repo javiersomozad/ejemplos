@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="trader1" class="es.anaya.spring.basic.s02.aop.stockmarket.Trader">
+		<constructor-arg name="name" value="Jordan Belfort" />
+		<constructor-arg name="money" value="10000.00d" />
+		<constructor-arg name="permission" value="false" />
+		<property name="market" ref="market" />
+	</bean>
+	
+	<bean id="trader2" class="es.anaya.spring.basic.s02.aop.stockmarket.Trader">
+		<constructor-arg name="name" value="Amancio Ortega" />
+		<constructor-arg name="money" value="12000.00d" />
+		<constructor-arg name="permission" value="false" />
+		<property name="market" ref="market" />
+	</bean>
+	
+	<bean id="stock1" class="es.anaya.spring.basic.s02.aop.stockmarket.Stock">
+		<constructor-arg name="name" value="AMZN" />
+		<constructor-arg name="value" value="989.58d" />
+	</bean>
+	
+	<bean id="stock2" class="es.anaya.spring.basic.s02.aop.stockmarket.Stock">
+		<constructor-arg name="name" value="AAPL" />
+		<constructor-arg name="value" value="155.30d" />
+	</bean>
+	
+	<bean id="stock3" class="es.anaya.spring.basic.s02.aop.stockmarket.Stock">
+		<constructor-arg name="name" value="NFLX" />
+		<constructor-arg name="value" value="198.02d" />
+	</bean>
+	
+	<bean id="market" class="es.anaya.spring.basic.s02.aop.stockmarket.Market">
+		<constructor-arg name="name" value="Nasdaq" />
+		<property name="stocks">
+            <list>
+                <ref bean="stock1" />
+                <ref bean="stock2" />
+                <ref bean="stock3" />
+            </list>
+        </property>
+	</bean>
+
+	
+	<bean id="operationMonitor" class="es.anaya.spring.basic.s02.aop.stockmarket.OperationMonitor">
+	</bean>
+	
+	<aop:config>
+        <aop:aspect id="myAspect" ref="operationMonitor">
+                <aop:pointcut id="sellMethod"  expression="execution(* *(..))" />
+                <aop:before pointcut-ref="sellMethod" method="anyMethod"/>
+        </aop:aspect>
+
+</aop:config>
+</beans>

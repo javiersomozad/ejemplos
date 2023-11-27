@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.post</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<h1>Form</h1>
+   <form action="#" th:action="@{/message}" th:object="${message}" method="post">
+    	<div>
+    		<label for="title">Title</label>
+    	</div>
+    	<div>
+  			 <input type="text" th:field="*{title}" />
+    	</div>
+    	<div>
+    		<label for="content">Content</label>
+    	</div>
+    	<div>
+  			 <textarea th:field="*{content}" />
+    	</div>
+    	
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+</body>
+</html>

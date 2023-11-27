@@ -1,0 +1,29 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://anaya.es/spring/services/s05/webservices"
+           targetNamespace="http://anaya.es/spring/services/s05/webservices" elementFormDefault="qualified">
+
+    <xs:element name="getStockRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getStockResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="stock" type="tns:stock"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="stock">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="stock" type="xs:string"/>
+            <xs:element name="company" type="xs:string"/>
+            <xs:element name="stockValue" type="xs:float"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

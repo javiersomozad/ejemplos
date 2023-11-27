@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans 
+  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="dateFormat" class="java.text.SimpleDateFormat">
+    <constructor-arg value="yyyy-MM-dd" />
+  </bean>
+  
+  <bean id="libDems" class="es.anaya.spring.basic.s01.parliament.Party"
+    p:name="Liberal" p:ideology="Liberal" p:year="1901" />
+  
+  <bean id="tories" class="es.anaya.spring.basic.s01.parliament.Party"
+    p:name="Conservative" p:ideology="Right Wing" p:year="1811" />
+  
+  <bean id="labour" class="es.anaya.spring.basic.s01.parliament.Party"
+    p:name="Labour" p:ideology="Left Wing" p:year="1950" />
+      
+  <bean id="mp1" class="es.anaya.spring.basic.s01.parliament.Member"
+    p:name="Nick Clegg" p:homeTown="London" p:party-ref="libDems" >
+    <property name="birth">
+      <bean factory-bean="dateFormat" factory-method="parse">
+        <constructor-arg value="1979-02-14" />
+      </bean>
+    </property>
+  </bean>
+
+  <bean id="mp2" class="es.anaya.spring.basic.s01.parliament.Member"
+    p:name="Mariano Rajoy" p:homeTown="Pontevedra" p:party-ref="tories" >
+    <property name="birth">
+      <bean factory-bean="dateFormat" factory-method="parse">
+        <constructor-arg value="1965-12-04" />
+      </bean>
+    </property>
+  </bean>
+
+  <bean id="mp3" class="es.anaya.spring.basic.s01.parliament.Member"
+    p:name="Pedro Sánchez" p:homeTown="Madrid" p:party-ref="labour" >
+    <property name="birth">
+      <bean factory-bean="dateFormat" factory-method="parse">
+        <constructor-arg value="1977-02-24" />
+      </bean>
+    </property>
+  </bean>
+  
+    <bean id="parliament" class="es.anaya.spring.basic.s01.parliament.Parliament"
+    p:name="Federation of Planets" p:year="1789"  >
+    <property name="members">
+      <list>
+        <ref bean="mp1" />
+                <ref bean="mp2" />
+                <ref bean="mp3" />
+      </list>
+    </property>
+  </bean>
+    
+</beans>

@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.customvalidator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<header>
+		<h1>Citizen submission</h1>
+	</header>
+	<main>
+	<div th:text="'ID ' + ${citizen.id}" />
+	<div th:text="'Account ' + ${citizen.account}" />
+	<div th:text="'Postcode ' + ${citizen.postCode}" />
+	<a href="/citizen">Send again</a> 
+	</main>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Routines App</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<h1>Routines page</h1>
+	<p>Routine creation</p>
+
+   <form action="#" th:action="@{/routines/create}" th:object="${routineDTO}" method="post">
+ 	<div>
+ 		<label for="task">Task</label>
+ 	</div>
+ 	<div>
+  			 <input type="text" th:field="*{task}" />
+ 	<div>
+ 		<label for="importance">Importane</label>
+ 	</div>
+ 	<div>
+  		<select th:field="*{importance}" >
+  		 <option value="1">VERY LOW</option>
+ 		 <option value="2">LOW</option>
+  		 <option value="3">NORMAL</option>
+  		 <option value="4">IMPORTANT</option>
+  		 <option value="5">VERY IMPORTANT</option> 			 	
+  		 <option value="6">CRUCIAL</option> 			 	
+ 		</select>
+ 	</div>
+  <p><input type="submit" value="Submit" /></p>
+ </form>
+</body>
+</html>

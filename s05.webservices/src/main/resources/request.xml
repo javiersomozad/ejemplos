@@ -1,0 +1,10 @@
+<soapenv:Envelope 
+ xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:gs="http://anaya.es/spring/services/s05/webservices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gs:getStockRequest>
+         <gs:id>2</gs:id>
+      </gs:getStockRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

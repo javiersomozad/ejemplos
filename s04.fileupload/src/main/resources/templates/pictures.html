@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.fileupload</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<header>
+		<h1>My pictures</h1>
+	</header>
+	<main>
+	<h2>Pictures page</h2>
+	<form action="#" th:action="@{/pictures}" th:object="${pictureCommand}" method="post" enctype="multipart/form-data">
+    	<div>
+    		<label for="title">Name</label>
+    	</div>
+    	<div>
+  			 <input type="text" th:field="*{name}" />
+    	</div>
+    	<div>
+    		<label for="content">Content</label>
+    	</div>
+    	<div>
+  			 <input id="imagefile" name="imagefile" type="file" class="file">
+    	</div>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+
+	<div th:each="picture : ${pictures}">
+		<div class="card">
+	  	<div class="card-block">
+		 <h4 class="card-title" th:text="${picture.name}">Default name</h4>
+		 <h6 class="card-subtitle mb-2 text-muted" th:text="${picture.id}">0</h6>
+		    <div> <img src="../../static/images/generic.jpg"
+                             th:src="@{'/pictures/image/' + ${picture.id}}"
+									width="200" height="200">
+			</div>
+		</div>
+		<div>
+	</div>
+
+	</main>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.flashattributes</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<header>
+		<h1>Advert submission</h1>
+		<h2 th:text="${message}"></h2>
+	</header>
+	<main>
+	<div th:text="'Title ' + ${advert.title}" />
+	<div th:text="'Text ' + ${advert.text}" />
+	<div th:text="'Contact ' + ${advert.contact}" />
+	<a href="/advert">Create another Advert</a> 
+	</main>
+</body>
+</html>

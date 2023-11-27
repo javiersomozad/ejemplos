@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Spring Web : s04.dblogin</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<h1>Spring security: register</h1>
+        <form th:action="@{/register}" method="post">
+            <div><label> User Name :<label></div> 
+            <div><input type="text" name="username"/></div>
+            <div><label> Email :<label></div> 
+            <div><input type="text" name="email"/></div>
+            <div><label> Password: </label></div>
+            <div><input type="password" name="password"/></div>
+            <div><input type="submit" value="Sign in"/></div>
+        </form>
+         	<div th:text="${message}"></div>
+           	<a th:href="@{/protected}">Try to go to protected</a>
+         <div th:if="${param.error}">
+            Login incorrect.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+    </body>
+</html>

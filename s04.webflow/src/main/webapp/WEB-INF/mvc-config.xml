@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:flow="http://www.springframework.org/schema/webflow-config"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+				http://www.springframework.org/schema/webflow-config
+		http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd">
+
+	<!-- With this all the content from resources dir will
+	be treated as static content: js, css, images,  -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+	<flow:flow-executor id="flowExecutor" flow-registry="flowRegistry"/>
+
+	<!-- 
+	The first step to dispatching requests to flows is to enable flow handling within Spring MVC. 
+	To this, install the FlowHandlerAdapter:
+	 -->
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+	    <property name="flowExecutor" ref="flowExecutor" />
+	</bean>
+	<!--
+		Once flow handling is enabled, the next step is to map specific application resources to your flows. 
+		The simplest way to do this is to define a FlowHandlerMapping:	 
+		With this config requests to /example/action will look for a flow which id is /example/action
+		In our case signup will look for signup named flow
+	 -->
+ 	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+    	<property name="flowRegistry" ref="flowRegistry"/>
+    	<property name="order" value="0"/>
+	</bean>
+	
+	<!-- The flowRegistry, where are our flow definition files??  -->
+	<flow:flow-registry id="flowRegistry" flow-builder-services="flowBuilderServices">
+    	<flow:flow-location path="/WEB-INF/flows/signup.xml" />
+	</flow:flow-registry>
+	<!-- ALTERNATE WAY:
+	  <flow:flow-registry id="flowRegistry" 
+           flow-builder-services="flowBuilderServices"
+           base-path="/WEB-INF/flows">
+    	 <flow:flow-location-pattern value="/**/*-flow.xml" />
+  	  </flow:flow-registry>
+	 -->
+	
+	
+	<!-- How shall we show the views? flowBuilder -> viewFactoryCreator-> viewResolver -> jsp -->
+	<flow:flow-builder-services id="flowBuilderServices" view-factory-creator="viewFactoryCreator"/>
+	
+	<bean id="viewFactoryCreator" class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
+		<property name="viewResolvers">
+			<list>
+				<ref bean="viewResolver"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 
+	Maps a logical view name to a physical resource
+	If someone asks for "home", It will look for /WEB-INF/view/home.jsp 
+	-->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<!-- We'll use this bean in an action state of the flow -->
+	<bean id="serviceDoSomething" class="es.anaya.spring.web.s04.webflow.ServiceDoSomething" />
+	
+</beans>

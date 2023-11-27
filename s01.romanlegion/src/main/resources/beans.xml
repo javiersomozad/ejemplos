@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:c="http://www.springframework.org/schema/c"
+   xmlns:util="http://www.springframework.org/schema/util"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans 
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/util 
+  http://www.springframework.org/schema/util/spring-util.xsd">
+  
+   <util:properties id="legiondata" 
+   		location="classpath:application.properties"/>
+   
+  <bean id="r" class="java.util.Random" />
+  
+  <bean id="name" class="es.anaya.spring.basic.s01.romanlegion.NameGenerator" />
+ 
+  <bean id="hastati1" class="es.anaya.spring.basic.s01.romanlegion.Hastati"
+    p:attack="#{3}" p:defense="6" 
+    p:movement="6" c:name="#{name.generate()}" />
+  <bean id="hastati2" class="es.anaya.spring.basic.s01.romanlegion.Hastati"
+    p:attack="#{3}" p:defense="#{hastati1.defense}" 
+    p:movement="6" c:name="#{name.generate()}" />
+  <bean id="hastati3" class="es.anaya.spring.basic.s01.romanlegion.Hastati"
+    p:attack="#{3}" p:defense="#{hastati1.defense}" 
+    p:movement="6" c:name="#{name.generate()}" />
+
+  <bean id="triari1" class="es.anaya.spring.basic.s01.romanlegion.Triari"
+    p:attack="#{5}" p:defense="#{r.nextInt(6) + 1}" 
+    p:movement="6" c:name="#{name.generate()}" />
+  <bean id="triari2" class="es.anaya.spring.basic.s01.romanlegion.Hastati"
+    p:attack="#{5}" p:defense="#{r.nextInt(6) + 1}" 
+    p:movement="6" c:name="#{name.generate()}" />
+  <bean id="triari3" class="es.anaya.spring.basic.s01.romanlegion.Hastati"
+    p:attack="#{5}" p:defense="#{r.nextInt(6) + 1}" 
+    p:movement="6" c:name="#{name.generate()}" />
+
+  <bean id="princeps1" class="es.anaya.spring.basic.s01.romanlegion.Princep"
+    p:attack="#{7}" p:defense="6" 
+    p:movement="6" c:name="#{'Princep '+ name.generate()}" />
+  <bean id="princeps2" class="es.anaya.spring.basic.s01.romanlegion.Princep"
+    p:attack="#{7}" p:defense="6" 
+    p:movement="6" c:name="#{'Princep '+ name.generate()}" />
+  <bean id="princeps3" class="es.anaya.spring.basic.s01.romanlegion.Princep"
+    p:attack="#{7}" p:defense="6" 
+    p:movement="6" c:name="#{'Princep '+ name.generate()}" />
+
+  <bean id="equite1" class="es.anaya.spring.basic.s01.romanlegion.Equite"
+    p:attack="6" p:defense="6" p:movement="6" 
+    c:name="#{'Equite '+ name.generate()}" />
+  <bean id="equite2" class="es.anaya.spring.basic.s01.romanlegion.Equite"
+    p:attack="6" p:defense="6" p:movement="6" 
+    c:name="#{'Equite '+ name.generate()}" />
+  <bean id="equite3" class="es.anaya.spring.basic.s01.romanlegion.Equite"
+    p:attack="6" p:defense="6" p:movement="6" 
+    c:name="#{'Equite '+ name.generate()}" />
+
+  <bean id="consul" class="es.anaya.spring.basic.s01.romanlegion.Consul"
+    p:attack="#{legion.infantry[0].attack}" 
+    p:defense="6" 
+    p:movement="#{legion.equites[1].movement}" >
+    <constructor-arg name="name" value="#{legiondata['consul.name']}" />
+    <property name="year" value="#{176 / 2}" />
+  </bean>
+
+  <bean id="legion" class="es.anaya.spring.basic.s01.romanlegion.Legion">
+    <constructor-arg name="name" value="#{legiondata['legion.name']}" />
+    <constructor-arg name="location" value="#{legiondata['legion.location']}" />
+    <property name="consul" value="#{consul}" />
+    <property name="infantry">
+      <list>
+        <ref bean="hastati1" />
+        <ref bean="hastati2" />
+        <ref bean="hastati3" />
+        <ref bean="triari1" />
+        <ref bean="triari2" />
+        <ref bean="triari3" />
+        <ref bean="princeps1" />
+        <ref bean="princeps2" />
+        <ref bean="princeps3" />
+      </list>
+    </property>
+    <property name="equites">
+      <list>
+        <ref bean="equite1" />
+        <ref bean="equite2" />
+        <ref bean="equite3" />
+      </list>
+    </property>
+  </bean>
+</beans>

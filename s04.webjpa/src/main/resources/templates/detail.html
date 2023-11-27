@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Web and JPA sample</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+ 	<h1>News from Spring JPA: detail</h1>
+</body>
+<ul>
+	<li th:text="${news.id}" />
+	<li th:text="${news.title}" />
+	<li th:text="${news.text}" />
+</ul>
+</html>

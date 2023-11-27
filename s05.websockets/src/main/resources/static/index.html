@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>s05.websockets</title>
+  <meta charset="UTF-8" />
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+<script src="/app.js"></script>
+</head>
+<body>
+  <div>
+    <label>Nickname</label> 
+    <input type="text" id="nickname" />
+    <input type="button" id="connect" value="Connect" />
+    <input type="button" id="disconnect" value="Disconnect" />
+  </div>
+  <div>
+    <textarea id="message" cols="40" rows="5"></textarea>
+  </div>
+  <div>
+  <input type="button" id="send" disabled="disabled" value="Send" />
+  </div>
+  <div>
+    <h2>Messages</h2>
+    <div id="messages"></div>
+  </div>
+</body>
+</html>

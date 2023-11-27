@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Guestbook - s04.commandobjects</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+  <div class="container">
+ 	<h1>Guestbook</h1>
+ 	<p>Ok, your message has been saved</p>
+	<div>
+  	<div>
+	 <h4 th:text="${message.title}">Default title</h4>
+	 <h6 th:text="${message.id}">0</h6>
+	  <div  th:text="${message.content}">Default message</div>
+	</div>
+	<div>
+	<a href=/messages>Back</a>
+	</div>
+</body>
+</html>

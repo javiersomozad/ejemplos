@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Routines App</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<h1>Routines page</h1>
+	<p>Routine detail</p>
+
+<ul>
+	<li th:text="${routine.id}" />
+	<li th:text="${routine.task}" />
+	<li th:text="${routine.importance}" />
+</ul>
+<a th:href="@{/routines}">Back</a></td>
+</body>
+</html>

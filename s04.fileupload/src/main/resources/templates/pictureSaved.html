@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring - s04.fileupload</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" 
+       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" 
+       integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" 
+       crossorigin="anonymous"
+	   th:href="@{/webjars/bootstrap/4.0.0-beta.2/css/bootstrap.min.css}">
+</head>
+<body>
+  <div class="container">
+ 	<h1>Pictures</h1>
+ 	<p>Ok, your picture has been saved</p>
+	<div class="card">
+  	<div class="card-block">
+	 <h4 class="card-title" th:text="${picture.name}">Default name</h4>
+	 <h6 class="card-subtitle mb-2 text-muted" th:text="${picture.id}">0</h6>
+	  <div class="card-text" th:text="${picture.content}">Default content</div>
+	</div>
+	<div>
+	<a href="/pictures">Back</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Web and JPA sample</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+ 	<h1>News from Spring JPA</h1>
+</body>
+<table>
+	<tr>
+		<thead>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Text</th>
+			<th></th>
+		</thead>
+	</tr>
+	<tr th:each="news : ${newsAll}">
+	<td th:text="${news.id}">0</td>
+	<td th:text="${news.title}">Default title</td>
+	<td th:text="${news.text}">Default text</td>
+	<td><a th:href="@{/news/{id}(id=${news.id})}">Detail</a></td>
+	</tr>
+</table>
+</html>

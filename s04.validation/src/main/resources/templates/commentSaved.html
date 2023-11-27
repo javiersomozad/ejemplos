@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.validation</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<header>
+		<h1>Comment submission</h1>
+	</header>
+	<main>
+	<div th:text="'User ' + ${comment.user}" />
+	<div th:text="'Text ' + ${comment.text}" />
+	<div th:text="'Mark ' + ${comment.mark}" />
+	<a href="/message">Send again</a> 
+	</main>
+</body>
+</html>

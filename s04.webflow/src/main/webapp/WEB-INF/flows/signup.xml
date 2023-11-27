@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+
+	<var name="newUser" class="es.anaya.spring.web.s04.webflow.User" />
+
+	<!-- By default, the first state is the start state. -->
+	<view-state id="start">
+		<transition to="enterAddress" />
+	</view-state>
+
+	<view-state id="enterAddress" model="newUser">
+		<transition on="submit" to="enterContact" />
+	</view-state>
+
+	<view-state id="enterContact" model="newUser">
+		<transition on="contactEntered" to="enterLogin" />
+	</view-state>
+
+	<view-state id="enterLogin" model="newUser">
+		<transition on="loginEntered" to="userReady" />
+	</view-state>
+
+	<!-- In this state the flow performs an action an then goes on. -->
+	<action-state id="userReady">
+		<evaluate expression="serviceDoSomething.logUser(newUser)" />
+		<transition to="finishFlow" />
+	</action-state>
+
+	<view-state id="finishFlow" model="newUser">
+		<transition to="finished" />
+	</view-state>
+
+	<end-state id="finished">
+		<output name="newUser" />
+	</end-state>
+
+	<end-state id="cancelled" />
+
+	<!-- With this in any place that we press Cancel we go to cancelled state -->
+	<global-transitions>
+		<transition on="cancel" to="cancelled" />
+	</global-transitions>
+
+
+</flow>

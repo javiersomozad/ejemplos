@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="captain" class="es.anaya.spring.basic.beanarguments.Pilot">
+		<constructor-arg name="name" value="Fernando Alonso" />
+		<constructor-arg name="license" value="342252GH" />
+	</bean>
+
+	<bean id="pirateCaptain" class="es.anaya.spring.basic.beanarguments.Pilot">
+		<constructor-arg name="name" value="Harlock" />
+		<constructor-arg name="license" value="65376GZ" />
+	</bean>
+	
+	<bean id="airplane" class="es.anaya.spring.basic.beanarguments.Airplane">
+		<constructor-arg name="model" value="Airbus 667" />
+		<constructor-arg name="builtYear" value="2011" />
+		<constructor-arg name="captain" ref="captain" />
+	</bean>
+</beans>

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Spring/S04.18nvalidation : index</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" 
+     src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" 
+     integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" 
+     crossorigin="anonymous"
+     th:href="@{/webjars/bootstrap/4.0.0-beta.2/css/bootstrap.min.css}">
+</head>
+<body>
+  <div class="container">
+   <h1>Orders</h1>
+   <p>Ok, your order has been saved</p>
+  <div class="card">
+      <div class="card-block">
+      <b th:text="${order.id}">0</b>: 
+        <span th:text="${order.description}">Default title</span>
+      <span th:text="${order.date}">Default message</span>
+      <span th:text="${order.total}">Default total</span>
+    </div>
+  <div>
+  <a href=/orders>Back</a>
+  </div>
+</body>
+</html>

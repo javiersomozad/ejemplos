@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.complexform</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<header>
+		<h1>Sign Up result</h1>
+	</header>
+	<main>
+	<div th:text="'title: ' + ${user.username}" />
+	<div th:text="'content: ' + ${user.password}" />
+	<div th:text="'date: ' + ${user.description}" />
+	<div th:text="'title: ' + ${user.birth}" />
+	<div th:text="'content: ' + ${user.status}" />
+	<div th:text="'sex: ' + ${user.sex}" />
+	<div th:text="'vehicles: ' + ${user.vehicles}" />
+		<a href="/signup">Send again</a> 
+	</main>
+</body>
+</html>

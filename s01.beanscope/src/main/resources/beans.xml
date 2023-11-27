@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="logger" class="es.anaya.spring.basic.s01.beanscope.Logger" scope="singleton" />
+	
+	<bean id="stormTrooper" class="es.anaya.spring.basic.s01.beanscope.StormTrooper" scope="prototype" >
+		<constructor-arg name="id" value="#{ T(java.lang.Math).random() * 9999.0 }" />
+		<constructor-arg name="rank" value="Soldier" />
+	</bean>
+	
+	<bean id="platoon" class="es.anaya.spring.basic.s01.beanscope.Platoon" >
+		<constructor-arg name="name" value="XIII" />
+		<constructor-arg name="planet" value="Tatooine" />
+		<constructor-arg name="logger" ref="logger" />
+		<property name="troopers">
+			<list>
+				<ref bean="stormTrooper" />
+				<ref bean="stormTrooper" />
+				<ref bean="stormTrooper" />
+				<ref bean="stormTrooper" />
+			</list>
+		</property>
+	</bean>
+
+</beans>

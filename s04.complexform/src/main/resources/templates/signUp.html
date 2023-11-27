@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Web : s04.complexform</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<h1>Form</h1>
+	 <form action="#" th:action="@{/signup}" th:object="${user}" method="post">
+   <div><label for="username">Username</label></div>
+   <div> <input type="text" th:field="*{username}" /></div>
+   
+   <div><label for="password">Password</label></div>
+   <div><input type="password" th:field="*{password}" /></div>
+   
+   <div><label for="description">Description</label></div>
+   <div><textarea th:field="*{description}" /></div>
+
+   <div><label for="birth">Birth</label></div>
+   <div><input type="text" th:field="*{birth}" /></div>
+
+   <div><label for="status">Status</label></div>
+   <div>
+   <select th:field="*{status}" >
+    <option value="0">Unknown</option>
+    <option value="1">Single</option>
+    <option value="2">Married</option>
+   </select>
+   </div>
+
+   <div><label for="sex">Sex</label></div>
+   <div>			 
+   <input type="radio" th:field="*{sex}" id="male" value="male" />
+   <label for="male"> Male</label><br />
+   <input type="radio" th:field="*{sex}" id="female" value="female" />
+   <label for="female"> Female</label><br />
+   <input type="radio" th:field="*{sex}" id="change" value="change" />
+   <label for="change"> Changes at night</label><br />
+   </div>
+   <div><label for="vehicles">Vehicles</label></div>
+   <div>
+   <input type="checkbox" th:field="*{vehicles}" id="car" value="0" />
+   <label for="car"> Car</label><br />
+   <input type="checkbox" th:field="*{vehicles}" id="bike" value="1" />
+   <label for="bike"> Bike</label><br />
+   <input type="checkbox" th:field="*{vehicles}" id="skate" value="2" />
+   <label for="skate"> Skate</label><br />
+   	</div>
+   
+  <p><input type="submit" value="Submit" /></p>
+  </form>
+  
+</body>
+</html>

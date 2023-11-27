@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bugs database - mockito</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+ 	<h1>Bugs</h1>
+</body>
+<table>
+	<tr>
+		<thead>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th></th>
+		</thead>
+	</tr>
+	<tr th:each="bug : ${bugs}">
+	<td th:text="${bug.id}">0</td>
+	<td th:text="${bug.title}">Default title</td>
+	<td th:text="${bug.description}">Default description</td>
+	</tr>
+</table>
+</html>
